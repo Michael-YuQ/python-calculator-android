@@ -1,0 +1,17 @@
+[tool.briefcase]
+project_name = "Calculator"
+bundle = "org.example"
+version = "1.0.0"
+url = "https://github.com/Michael-YuQ/python-calculator-android"
+license.text = "MIT"
+author = "Michael-YuQ"
+author_email = "example@example.com"
+
+[tool.briefcase.app.calculator]
+formal_name = "Calculator"
+description = "A simple calculator app"
+sources = ['calculator']
+requires = []
+
+[tool.briefcase.app.calculator.android]
+build_gradle_dependencies = []
