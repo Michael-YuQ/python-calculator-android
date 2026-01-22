@@ -1,0 +1,261 @@
+{
+  "win32": [
+    {
+      "hwnd": 2561580,
+      "class": "Chrome_RenderWidgetHostHWND",
+      "text": "继续"
+    }
+  ],
+  "uiautomation": [
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "2",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "17",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "BeeWare构建指南.md",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "build_colab.py",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "build_docker.bat",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "build_on_colab.ipynb",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "build_windows.bat",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "buildozer.spec",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "Colab快速构建流程.md",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "get_focused_handle.py",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "U",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "get_precise_control.py",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "U",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "get_window_content.py",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "U",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "input_by_handle.py",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "U",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "input_by_position.py",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "U",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "input_continue.py",
+      "class": ""
+    },
+    {
+      "type": "Text",
+      "name": "U",
+      "class": ""
+    }
+  ]
+}

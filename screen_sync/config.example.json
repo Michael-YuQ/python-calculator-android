@@ -1,0 +1,54 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 5003,
+    "max_clients": 10
+  },
+  "sender": {
+    "server_host": "localhost",
+    "server_port": 5003,
+    "fps": 4,
+    "quality": 75,
+    "region": "right_quarter",
+    "auto_reconnect": true,
+    "reconnect_delay": 2
+  },
+  "receiver": {
+    "server_host": "localhost",
+    "server_port": 5003,
+    "sender_id": "default",
+    "window_width": 800,
+    "window_height": 600,
+    "auto_reconnect": true
+  },
+  "regions": {
+    "right_quarter": {
+      "description": "屏幕右侧 1/4",
+      "left_ratio": 0.75,
+      "top_ratio": 0,
+      "right_ratio": 1.0,
+      "bottom_ratio": 1.0
+    },
+    "left_quarter": {
+      "description": "屏幕左侧 1/4",
+      "left_ratio": 0,
+      "top_ratio": 0,
+      "right_ratio": 0.25,
+      "bottom_ratio": 1.0
+    },
+    "top_half": {
+      "description": "屏幕上半部分",
+      "left_ratio": 0,
+      "top_ratio": 0,
+      "right_ratio": 1.0,
+      "bottom_ratio": 0.5
+    },
+    "full_screen": {
+      "description": "全屏",
+      "left_ratio": 0,
+      "top_ratio": 0,
+      "right_ratio": 1.0,
+      "bottom_ratio": 1.0
+    }
+  }
+}
