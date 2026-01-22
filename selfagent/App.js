@@ -32,6 +32,7 @@ Notifications.setNotificationHandler({
 
 const API_BASE = 'http://111.170.6.103:9999';
 const SCHEDULE_API = `${API_BASE}/api/daily.php`;
+const WS_URL = 'ws://111.170.6.103:9999/ws';  // WebSocket 地址
 
 function MainApp() {
   const [sites, setSites] = useState([
@@ -46,16 +47,89 @@ function MainApp() {
   const [schedules, setSchedules] = useState([]);
   const [notifications, setNotifications] = useState([]);
   const [showNotifications, setShowNotifications] = useState(false);
+  const [wsConnected, setWsConnected] = useState(false);
   
   const notificationListener = useRef();
   const responseListener = useRef();
   const slideAnim = useRef(new Animated.Value(-300)).current;
+  const wsRef = useRef(null);
+  const reconnectTimer = useRef(null);
+
+  // WebSocket 连接管理
+  const connectWebSocket = () => {
+    if (wsRef.current?.readyState === WebSocket.OPEN) return;
+    
+    console.log('正在连接 WebSocket...');
+    wsRef.current = new WebSocket(WS_URL);
+    
+    wsRef.current.onopen = () => {
+      console.log('WebSocket 已连接');
+      setWsConnected(true);
+      // 清除重连定时器
+      if (reconnectTimer.current) {
+        clearTimeout(reconnectTimer.current);
+        reconnectTimer.current = null;
+      }
+    };
+    
+    wsRef.current.onmessage = async (event) => {
+      try {
+        const data = JSON.parse(event.data);
+        console.log('收到消息:', data);
+        
+        // 弹出系统通知
+        await Notifications.scheduleNotificationAsync({
+          content: {
+            title: data.title || '📢 新消息',
+            body: data.message || data.body || event.data,
+            data: data,
+          },
+          trigger: null, // 立即显示
+        });
+        
+        // 添加到通知列表
+        setNotifications(prev => [
+          { 
+            id: Date.now().toString(), 
+            title: data.title || '📢 新消息',
+            body: data.message || data.body || event.data,
+          },
+          ...prev
+        ]);
+      } catch (e) {
+        // 如果不是 JSON，直接显示文本
+        await Notifications.scheduleNotificationAsync({
+          content: {
+            title: '📢 新消息',
+            body: event.data,
+          },
+          trigger: null,
+        });
+        setNotifications(prev => [
+          { id: Date.now().toString(), title: '📢 新消息', body: event.data },
+          ...prev
+        ]);
+      }
+    };
+    
+    wsRef.current.onerror = (error) => {
+      console.log('WebSocket 错误:', error);
+    };
+    
+    wsRef.current.onclose = () => {
+      console.log('WebSocket 已断开，5秒后重连...');
+      setWsConnected(false);
+      // 5秒后自动重连
+      reconnectTimer.current = setTimeout(connectWebSocket, 5000);
+    };
+  };
 
   useEffect(() => {
     loadSites();
     loadSchedules();
     registerForPushNotifications();
     setupDailyReminder();
+    connectWebSocket();  // 启动 WebSocket 连接
 
     notificationListener.current = Notifications.addNotificationReceivedListener(notification => {
       setNotifications(prev => [
@@ -71,6 +145,13 @@ function MainApp() {
     return () => {
       Notifications.removeNotificationSubscription(notificationListener.current);
       Notifications.removeNotificationSubscription(responseListener.current);
+      // 清理 WebSocket
+      if (wsRef.current) {
+        wsRef.current.close();
+      }
+      if (reconnectTimer.current) {
+        clearTimeout(reconnectTimer.current);
+      }
     };
   }, []);
 
