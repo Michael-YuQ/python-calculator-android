@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/siteNameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/input_bg"
+        android:hint="站点名称"
+        android:padding="14dp"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/siteUrlInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/input_bg"
+        android:hint="站点地址 (http://...)"
+        android:inputType="textUri"
+        android:padding="14dp"
+        android:textSize="15sp" />
+</LinearLayout>
